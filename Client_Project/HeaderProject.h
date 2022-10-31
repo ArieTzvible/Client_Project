@@ -20,7 +20,7 @@
 PClient createNewClientFromFile(FILE* file, char* line);//Create a new cell from the file
 void creatingListOfClientsFromAFile(ListManager manager, FILE* file);//Creating a list from the file
 
-//General
+//Func General
 char* getNewFileName();//Requesting a different file name
 char* GettingLine(FILE* file);//getting a complete row
 Date creatingANewDateStructure(char* date);//Create a new date
