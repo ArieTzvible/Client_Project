@@ -95,7 +95,7 @@ int main()
 	char strUse[7] = { 0 };//Create a variable to receive the user's selection. 
 	FILE* debtFile;//Create a pointer to the file.
 	char* fileName = { 0 };//Create a pointer to get the file name
-	char* tempFileName = "f.csv";//Declaration of a variable containing the file name.
+	char* tempFileName = FILE_NAME;//Declaration of a variable containing the file name.
 	int fileNameDynamic = 0;//Creating a variable to test whether the pointer to the file is dynamicõ
 	fileName = tempFileName;//Getting the filename for the pointer
 

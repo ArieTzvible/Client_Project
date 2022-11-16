@@ -2,14 +2,10 @@
 #include "HeaderProject.h"
 #include "HeaderTest.h"
 
-
-
-
 char* getNewFileName() {//Requesting another file name
 	printf("	Enter a file name: ");
 	char* string = GettingLine(stdin);//getting a line from the user includes creating a dynamic string
-	if (string[strlen(string) - 4] != '.' || string[strlen(string) - 3] != 'c' ||
-		string[strlen(string) - 2] != 's' || string[strlen(string) - 1] != 'v') {// check that there is no file name at the end(CSV)
+	if (strcmp((string + strlen(string) - 4), ".csv")) {// check that there is no file name at the end(CSV)
 		char* str = (char*)malloc((strlen(string) + strlen(".csv") + 1) * sizeof(char));//creating a string that will also contain the document extension
 		if (!str)//testing whether the allocation was successful
 			printf("Not enough memory\n");//print error;//Error printing when there is no space in memory

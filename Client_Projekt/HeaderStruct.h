@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define FILE_NAME "f.csv"
 #define CHUNK 10
 #define ID 9//Maximum digits in ID.
 #define PHONE 10//Maximum digits in phon.
