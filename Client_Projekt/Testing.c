@@ -79,13 +79,13 @@ int comparingDates(Date nweCell, Date temp) {//Comparing dates
 
 void isTheDataCorrect(PClient* client) {
 	if ((*client)->error.ERROR) return;
-	if (strlen((*client)->id) != ID || (!isTheIntCorrect((*client)->id)))//Checking the ID
+	if (strlen((*client)->id) != ID || (!isInt((*client)->id)))//Checking the ID
 		(*client)->error.id = 1;
 	if (!isTheStringCorrect((*client)->firstName))
 		(*client)->error.firstName = 1;//first name check
 	if (!isTheStringCorrect((*client)->lastName))
 		(*client)->error.lastName = 1;//last name check
-	if (!isTheIntCorrect((*client)->phone))
+	if (!isInt((*client)->phone))
 		(*client)->error.phone = 1;
 	if (((int)strlen((*client)->phone) == 9) && *(*client)->phone != '0') {//Checking if the phone is smaller than 10 because there is no 0 at the beginning
 		char* phone = (char*)malloc(11 * sizeof(char));//Declaration of a dynamic variable

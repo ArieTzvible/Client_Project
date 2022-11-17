@@ -10,21 +10,36 @@ int isNum(char ch) {
 	return 0;
 }
 
-int isTheIntCorrect(char* num) {//Checking the correctness of the int in the string
+int isInt(char* num) {//Checking the correctness of the int in the string
 	if (!num) return 0;
-	for (int i = 0; i < strlen(num); i++)
+	size_t length = strlen(num);
+	for (int i = 0; i < length; i++)
 		if (!isNum(num[i]))
 			return 0;
 	return 1;
 }
 
-int isTheFloatCorrect(char* num) {//Checking the correctness of the float in the string
+int isFloat(char* num) {//Checking the correctness of the float in the string
 	if (!num) return 0;
-	for (int i = 0; i < strlen(num); i++)
-		if (num[i] != '.')
-			if (!isNum(num[i]))
-				return 0;
+	size_t length = strlen(num);
+	for (int i = 0; i < length; i++)
+		if ((num[i] != '.') && (!isNum(num[i])))
+			return 0;
 	return 1;
+}
+
+int isNegativeFloat(char* num) {
+	if (*num == '-')
+		return isFloat(num + sizeof(char));
+	else
+		return isFloat(num);
+}
+
+int isNegativeInt(char* num) {
+	if (*num == '-')
+		return isInt(num + sizeof(char));
+	else
+		return isInt(num);
 }
 
 int isLetter(char* ch) {

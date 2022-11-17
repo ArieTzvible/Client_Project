@@ -58,5 +58,4 @@ void addingASortedCustomerToTheList(PClient* head, PClient newCell);//Sorting an
 ListManager createANewListManager();//Creating a new manager structure
 PClient initializeErrorsinAnewCell();//Creating a structure of a new client
 
-
 #endif

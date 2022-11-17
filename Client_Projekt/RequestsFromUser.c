@@ -35,7 +35,7 @@ PClient createANewCellFromTheUser(char* line) {//Create a new cell from the user
 					}
 				}
 				else if (!strcmp(parameter, "id")) { //testing to which object in the cell we will add
-					if (isTheIntCorrect(value) && strlen(value) == ID) {//Checking the value of the ID
+					if (isInt(value) && strlen(value) == ID) {//Checking the value of the ID
 						cellNew->id = value;//Getting a ID for the new cell
 					}
 					if (!(cellNew->id)) {
@@ -44,7 +44,7 @@ PClient createANewCellFromTheUser(char* line) {//Create a new cell from the user
 					}
 				}
 				else if (!strcmp(parameter, "phone")) {//testing to which object in the cell we will add
-					if (isTheIntCorrect(value) && strlen(value) == PHONE) {//Checking the value of the phone
+					if (isInt(value) && strlen(value) == PHONE) {//Checking the value of the phone
 						cellNew->phone = value;//Getting a phone for the new cell
 					}
 					if (!cellNew->phone) {
@@ -53,10 +53,7 @@ PClient createANewCellFromTheUser(char* line) {//Create a new cell from the user
 					}
 				}
 				else if (!strcmp(parameter, "debt")) {//testing to which object in the cell we will add
-					char* strDebt = value;
-					if (*strDebt == '-')
-						strDebt++;
-					if (isTheFloatCorrect(strDebt))//Checking the value of the debt
+					if(isNegativeFloat(value))//Checking the value of the debt
 						cellNew->debt = convertStringToDebt(value);//Receiving the number for the client
 					if (!(cellNew->debt))
 						errorPrintingandDeletingACell(&cellNew, "\tERROR! It looks like you entered an invalid debt;\n");//printing an error and deleting a cell
@@ -133,19 +130,17 @@ void sortingByRequest(ListManager list) {//Sort by request from the user
 				else
 					testFunction(list, testingLastName, value, opr);//Sending to a sorting function and printing according to the request
 			else if (!(strcmp(parameter, "id"))) //Checking whether the sorting request is by ID
-				if (strlen(value) != ID || !isTheIntCorrect(value))
+				if (strlen(value) != ID || !isInt(value))
 					printf("\tERROR! It looks like you entered an invalid id; \n");//print error
 				else
 					testFunction(list, testingID, value, opr);//Sending to a sorting function and printing according to the request
 			else if (!(strcmp(parameter, "phone"))) //Checking whether the sorting request is by phone
-				if (strlen(value) != PHONE || !isTheIntCorrect(value))
+				if (strlen(value) != PHONE || !isInt(value))
 					printf("\tERROR! It looks like you entered an invalid phone;\n");//print error
 				else
 					testFunction(list, testingPhone, value, opr);//Sending to a sorting function and printing according to the request
 			else if (!(strcmp(parameter, "debt"))) {//Checking whether the sorting request is by debt
-				char* tempCh = value;//Creating a pointer to the value for the test
-				if (*tempCh == '-') tempCh++;//Moving the pointer to the next character in case there is a minus
-				if (!isTheFloatCorrect(tempCh)) //Check that the value we received contains only numbers
+				if(isNegativeFloat(value))
 					printf("\tERROR! It looks like you entered an invalid debt;\n");//print error
 				else {
 					float sumDebt = convertStringToDebt(value);//creating a variable to receive the debt from the string

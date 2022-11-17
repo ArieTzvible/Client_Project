@@ -3,9 +3,9 @@
 #include "HeaderTest.h"
 
 char* getNewFileName() {//Requesting another file name
-	printf("	Enter a file name: ");
+	printf("\n\tEnter a file name: ");
 	char* string = GettingLine(stdin);//getting a line from the user includes creating a dynamic string
-	if (strcmp((string + strlen(string) - 4), ".csv")) {// check that there is no file name at the end(CSV)
+	if (strcmp((string + (strlen(string) - 4)), ".csv")) {// check that there is no file name at the end(CSV)		
 		char* str = (char*)malloc((strlen(string) + strlen(".csv") + 1) * sizeof(char));//creating a string that will also contain the document extension
 		if (!str)//testing whether the allocation was successful
 			printf("Not enough memory\n");//print error;//Error printing when there is no space in memory
@@ -102,22 +102,18 @@ void fillingInAPhone(PClient curr, char* string) {
 	if ((!curr) || (!string)) return;
 	curr->phone = creatingADynamicCharWithContent(string);//Getting phone
 }
+
 void fillingInADebt(PClient curr, char* string) {
 	if ((!curr) || (!string)) return;
-	char* tempChar;//Creating a variable for a debt check without the minus
-	char* tempForFree;//Creating a variable for the head of the string to allow deletion
-	tempChar = creatingADynamicCharWithContent(string);//Getting debt
-	tempForFree = tempChar;
-	if (tempChar) {
-		if (*tempChar == '-')// Check if there is a minus
-			tempChar++;//Move pointer to next cell
-		if (isTheFloatCorrect(tempChar))//send to check that the string contains only numbers
-			curr->debt = convertStringToDebt(string);//Receiving the number for the client
-	}
+	char* strDebt;//Creating a variable for a debt check without the minus
+	strDebt = creatingADynamicCharWithContent(string);//Getting debt
+	if (strDebt && isNegativeFloat(strDebt))
+		curr->debt = convertStringToDebt(string);//Receiving the number for the client
 	else
 		curr->error.ERROR = curr->error.debt = 1;//error in receiving the debt
-	free(tempForFree);//Getting a pointer to the head of the string to allow deletion
+	free(strDebt);
 }
+
 void fillingInADate(PClient curr, char* string) {
 	if ((!curr) || (!string)) return;
 	curr->date = creatingANewDateStructure(string);//send to create a date
@@ -176,21 +172,21 @@ Date creatingANewDateStructure(char* date) {//create date
 	if (((int)strlen(strDate) == 10) && (strDate[2] == '/' && strDate[5] == '/')) {//Is the date correct.
 		char* token;
 		token = strtok(date, "/");//accepting up to a comma (a cell in the file) and accepting it into a pointer
-		if (isTheIntCorrect(token)) {//Is the number correct?
+		if (isInt(token)) {//Is the number correct?
 			int day = atoi(token);//Convert string to number
 			if (day <= DAY && day > 0) {//Is the number in the normal range
 				temp.day = day;// Application of the number in the designated cell
 			}
 		}
 		token = strtok(NULL, "/");
-		if (isTheIntCorrect(token)) {//Is the number correct?
+		if (isInt(token)) {//Is the number correct?
 			int month = atoi(token);//Convert string to number
 			if (month <= MONTH && month > 0) {//Is the number in the normal range
 				temp.month = month;// Application of the number in the designated cell
 			}
 		}
 		token = strtok(NULL, "\n");
-		if (isTheIntCorrect(token)) {//Is the number correct?
+		if (isInt(token)) {//Is the number correct?
 			int year = atoi(token);//Convert string to number
 			if (year <= MAX_YEAR && year > MIN_YEAR) {//Is the number in the normal range
 				temp.year = year;// Application of the number in the designated cell

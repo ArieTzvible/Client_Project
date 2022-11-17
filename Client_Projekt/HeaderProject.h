@@ -3,15 +3,7 @@
 #ifndef HeaderProject
 #define HeaderProject
 
-#define CHUNK 10
-#define ID 9//Maximum digits in ID.
-#define PHONE 10//Maximum digits in phon.
-#define DAY 31//Maximum days.
-#define MONTH 12//Maximum months.
-#define YEAR 2500//Maximum years
-
 #include "HeaderStruct.h"
-
 
 #define _CRTDBG_MAP_ALLOC
 #include <crtdbg.h>
@@ -33,15 +25,3 @@ Date creatingANewDateStructure(char* date);//Create a new date
 char* creatingADynamicCharWithContent(char* string);//Create a dynamic string with content
 
 #endif
-
-
-
-/*
-
-#ifndef HeaderProject
-#define HeaderProject
-
-
-#endif
-
-*/

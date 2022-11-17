@@ -49,7 +49,6 @@
 // If the customer exists, we will add the debt, if necessary we will update the details(date and phone).
 // If the client does not exist we will add the client to the list.
 // 
-// 
 //In order to exit the program and finish, enter "Quit".
 // The program will release the list and close the program.
 //
@@ -62,10 +61,8 @@
 #include "HeaderDelet.h"
 #include "HeaderTest.h"
 #include "HeaderUser.h"
-
 //*********
 
-// 
 int testingFirstName(PClient cell, void* value) {//First name check (specific)
 	return strcmp(cell->firstName, (char*)value);//Comparison of the strings
 }
