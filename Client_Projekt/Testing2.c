@@ -62,7 +62,7 @@ int isTheStringCorrect(char* string) {//Checking the correctness of the letters 
 	return 1;
 }
 
-float convertStringToDebt(char* strDebt) {
+float stringConversionToFloat(char* strDebt) {
 	float debt1 = 100 * (float)atof(strDebt);
 	int debt2 = (int)debt1;//Multiply the debt by one hundred
 	return debt2 / (float)100;//Returning the debt with two decimal digits

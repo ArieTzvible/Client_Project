@@ -108,7 +108,7 @@ void fillingInADebt(PClient curr, char* string) {
 	char* strDebt;//Creating a variable for a debt check without the minus
 	strDebt = creatingADynamicCharWithContent(string);//Getting debt
 	if (strDebt && isNegativeFloat(strDebt))
-		curr->debt = convertStringToDebt(string);//Receiving the number for the client
+		curr->debt = stringConversionToFloat(string);//Receiving the number for the client
 	else
 		curr->error.ERROR = curr->error.debt = 1;//error in receiving the debt
 	free(strDebt);

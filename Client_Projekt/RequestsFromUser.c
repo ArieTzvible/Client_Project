@@ -54,7 +54,7 @@ PClient createANewCellFromTheUser(char* line) {//Create a new cell from the user
 				}
 				else if (!strcmp(parameter, "debt")) {//testing to which object in the cell we will add
 					if(isNegativeFloat(value))//Checking the value of the debt
-						cellNew->debt = convertStringToDebt(value);//Receiving the number for the client
+						cellNew->debt = stringConversionToFloat(value);//Receiving the number for the client
 					if (!(cellNew->debt))
 						errorPrintingandDeletingACell(&cellNew, "\tERROR! It looks like you entered an invalid debt;\n");//printing an error and deleting a cell
 					free(value);//Release a value
@@ -143,7 +143,7 @@ void sortingByRequest(ListManager list) {//Sort by request from the user
 				if(isNegativeFloat(value))
 					printf("\tERROR! It looks like you entered an invalid debt;\n");//print error
 				else {
-					float sumDebt = convertStringToDebt(value);//creating a variable to receive the debt from the string
+					float sumDebt = stringConversionToFloat(value);//creating a variable to receive the debt from the string
 					testFunction(list, testingDebt, &sumDebt, opr);//Sending to a sorting function and printing according to the request
 				}
 			}

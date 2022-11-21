@@ -10,7 +10,7 @@ int isNegativeInt(char* num);
 int isNegativeFloat(char* num);
 int isLetter(char* ch);
 int isTheStringCorrect(char* string);//Checking the correctness of the letters and changing uppercase to lowercase letters
-float convertStringToDebt(char* strDebt);//Convert a string to a sum with only two digits after the dot
+float stringConversionToFloat(char* strDebt);//Convert a string to a sum with only two digits after the dot
 
 void testingTheNewCell(ListManager manager, PClient* newCell);// Checking whether the ID already exists
 void cellUpdate(PClient* newCell, PClient* temp);//Cell update
