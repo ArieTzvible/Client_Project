@@ -1,12 +1,14 @@
 
-#include "HeaderUser.h"
 
+#include "Header.h"
+#include "HeaderUser.h"
 #include "HeaderProject.h"
 #include "HeaderPrintingManager.h"
 #include "HeaderTest.h"
 #include "HeaderDelet.h"
 #include "HeaderSpecific.h"
-
+#include "HeaderGeneral.h"
+#include "HeaderCreatingAClient.h"
 
 PClient createANewCellFromTheUser(char* line) {//Create a new cell from the user
 	if (!*line) return NULL;//Checking that the string is not empty

@@ -2,8 +2,7 @@
 #ifndef HeaderPrintingManager
 #define HeaderPrintingManager
 
-//#include "HeaderProject.h"
-#include "HeaderStruct.h"
+#include "Header.h"
 
 void printInstructions();//Printing instructions for the program.
 void printTableHead(char* print);//Creating a printable table header
@@ -13,9 +12,5 @@ void printListDebtsFromTheSmallestToTheLargest(PClient head, char* mainTitle);//
 void printingCellsWithErrors(PClient head);//Client printing with errors
 void printErrors(char* error, int* printsThatWere);//Print the error
 void printASortedCell(PClient previousList, int flag);//Print a sorted cell
-
-
-
-
 
 #endif

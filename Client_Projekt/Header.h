@@ -1,15 +1,16 @@
 #pragma once
 
-#ifndef HeaderStruct
-#define HeaderStruct
+#ifndef Header
+#define Header
 
 #define _CRT_SECURE_NO_WARNINGS
+#define _CRTDBG_MAP_ALLOC
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <crtdbg.h>
 
 #define FILE_NAME "f.csv"
-#define CHUNK 10
 #define ID 9//Maximum digits in ID.
 #define PHONE 10//Maximum digits in phon.
 #define DAY 31//Maximum days.
@@ -58,4 +59,7 @@ void addingASortedCustomerToTheList(PClient* head, PClient newCell);//Sorting an
 ListManager createANewListManager();//Creating a new manager structure
 PClient initializeErrorsinAnewCell();//Creating a structure of a new client
 
+char* creatingADynamicCharWithContent(char* string);//Creating a dynamic variable with content
+
+char* getNewFileName();//Requesting another file name
 #endif

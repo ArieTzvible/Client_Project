@@ -21,7 +21,7 @@
     <ClInclude Include="HeaderPrintingManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderStruct.h">
+    <ClInclude Include="Header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderTest.h">
@@ -36,14 +36,14 @@
     <ClInclude Include="HeaderSpecific.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderAddAndCreat.h">
+    <ClInclude Include="HeaderGeneral.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderCreatingAClient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="func.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MainProject.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -62,7 +62,10 @@
     <ClCompile Include="AddAndCreat.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Testing2.c">
+    <ClCompile Include="General.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CreatingAClient.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

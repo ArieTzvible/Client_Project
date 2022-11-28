@@ -54,13 +54,17 @@
 //
 
 
+
+//********
+#include "Header.h"
 #include "HeaderProject.h"
-//*********
 #include "HeaderPrintingManager.h"
 #include "HeaderSpecific.h"
 #include "HeaderDelet.h"
 #include "HeaderTest.h"
 #include "HeaderUser.h"
+#include "HeaderGeneral.h"
+#include "HeaderCreatingAClient.h"
 //*********
 
 int testingFirstName(PClient cell, void* value) {//First name check (specific)

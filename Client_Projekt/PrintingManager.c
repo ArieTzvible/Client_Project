@@ -1,6 +1,6 @@
 
+#include "Header.h"
 #include "HeaderProject.h"
-#include "HeaderStruct.h"
 #include "HeaderPrintingManager.h"
 
 void printInstructions() {
