@@ -1,8 +1,5 @@
 
-#include "HeaderProject.h"
 #include "HeaderTest.h"
-#include "HeaderDelet.h"
-#include "HeaderPrintingManager.h"
 
 void testingTheNewCell(ListManager manager, PClient* newCell) {// Checking whether the ID already exists
 	if (!*newCell) return;

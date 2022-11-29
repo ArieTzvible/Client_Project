@@ -1,8 +1,5 @@
 
-#include "Header.h"
 #include "HeaderCreatingAClient.h"
-#include "HeaderGeneral.h"
-
 
 void fillingInAFirstName(PClient curr, char* string) {
 	if ((!curr) || (!string)) return;

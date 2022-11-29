@@ -1,4 +1,10 @@
 ﻿  AddAndCreat.c
+  CreatingAClient.c
+  DeletingFuncProject.c
   General.c
+  Main.c
+  PrintingManager.c
+  RequestsFromUser.c
+  Testing.c
   Generating Code...
-  Client_Projekt.vcxproj -> C:\Users\122\OneDrive\Arie C\Client Project\Client_Project\x64\Debug\Client_Projekt.exe
+  Client_Projekt.vcxproj -> C:\Users\stu\OneDrive\Arie C\Client Project\‏‏Client_Project_Final6\x64\Debug\Client_Projekt.exe

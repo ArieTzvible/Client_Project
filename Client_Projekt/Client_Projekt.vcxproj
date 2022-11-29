@@ -143,8 +143,7 @@
     <ClInclude Include="HeaderDelet.h" />
     <ClInclude Include="HeaderGeneral.h" />
     <ClInclude Include="HeaderPrintingManager.h" />
-    <ClInclude Include="HeaderProject.h" />
-    <ClInclude Include="HeaderSpecific.h" />
+    <ClInclude Include="HeaderMain.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="HeaderTest.h" />
     <ClInclude Include="HeaderUser.h" />
@@ -153,7 +152,7 @@
     <ClCompile Include="AddAndCreat.c" />
     <ClCompile Include="CreatingAClient.c" />
     <ClCompile Include="DeletingFuncProject.c" />
-    <ClCompile Include="MainProject.c" />
+    <ClCompile Include="Main.c" />
     <ClCompile Include="PrintingManager.c" />
     <ClCompile Include="RequestsFromUser.c" />
     <ClCompile Include="Testing.c" />

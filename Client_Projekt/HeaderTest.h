@@ -3,7 +3,8 @@
 #ifndef HeaderTest
 #define HeaderTest
 
-#include "Header.h"
+#include "HeaderGeneral.h"
+#include "HeaderDelet.h"
 
 void testingTheNewCell(ListManager manager, PClient* newCell);// Checking whether the ID already exists
 void cellUpdate(PClient* newCell, PClient* temp);//Cell update

@@ -1,5 +1,4 @@
 
-#include "Header.h"
 #include "HeaderGeneral.h"
 
 void addToHeadTheList(PClient* head, PClient newCell) {
@@ -62,39 +61,4 @@ PClient initializeErrorsinAnewCell() {//initialize a new client structure
 	newClient->error.comparisonLastName = 0;//Error ID Does not match last name
 	newClient->error.lacksValues = 0;//Error Not enough values
 	return newClient;
-}
-
-char* getNewFileName() {//Requesting another file name
-	printf("\n\tEnter a file name: ");
-	char* string = GettingLine(stdin);//getting a line from the user includes creating a dynamic string
-	if (strcmp((string + (strlen(string) - 4)), ".csv")) {// check that there is no file name at the end(CSV)		
-		char* str = (char*)malloc((strlen(string) + strlen(".csv") + 1) * sizeof(char));//creating a string that will also contain the document extension
-		if (!str)//testing whether the allocation was successful
-			printf("Not enough memory\n");//print error;//Error printing when there is no space in memory
-		else {
-			strcpy(str, string);//copy the string received from the user
-			strcat(str, ".csv");//copy the file extension
-			strcat(str, "\0");//adding 0\ at the end of the string
-			free(string);//release the string we received from the user
-			string = str;//setting the string to the string to send
-		}
-	}
-	return string;//sending a pointer with the file name
-}
-
-char* creatingADynamicCharWithContent(char* string) {//Creating a dynamic variable with content
-	if (!string) return NULL;//testing that we received a value
-	while (*string == ' ' || *string == '\t') string++;//skipping all spaces before the string
-	int i = (int)strlen(string) - 1;//creating a variable of the length of the string
-	while (string[i] == ' ' || string[i] == '\t') string[i--] = '\0';// deletes all spaces after the string
-	char* temp = (char*)malloc((strlen(string) + 1) * sizeof(char));// Create a dynamic variable with the size of the string
-	if (!temp) {// check that the allocation was successful
-		printf("Not enough memory\n");//Error printing when there is no space in memory
-		return NULL;// Returning an error
-	}
-	else {
-		strcpy(temp, string);//copying the string we received from the user to the string we allocated space for
-		temp[strlen(temp)] = '\0';//string closure
-	}
-	return temp;
 }

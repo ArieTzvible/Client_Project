@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HeaderProject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="HeaderPrintingManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -33,7 +30,7 @@
     <ClInclude Include="HeaderUser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderSpecific.h">
+    <ClInclude Include="HeaderMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderGeneral.h">
@@ -44,7 +41,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MainProject.c">
+    <ClCompile Include="Main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PrintingManager.c">

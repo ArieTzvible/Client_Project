@@ -1,7 +1,7 @@
+//*******************vvvvvvvvvvvvvvvvvvvvvvv
 #pragma once
 #ifndef HeaderGeneral
 #define HeaderGeneral
-
 #include "Header.h"
 
 #define CHUNK 10
@@ -15,5 +15,7 @@ int isLetter(char* ch);
 int isTheStringCorrect(char* string);//Checking the correctness of the letters and changing uppercase to lowercase letters
 float stringConversionToFloat(char* strFloat);//Convert a string to a sum with only two digits after the dot
 char* GettingLine(FILE* file);//getting a complete line from the file
+char* creatingADynamicCharWithContent(char* string);//Creating a dynamic variable with content
+char* getNewFileName(char* extension);//Requesting another file name
 
 #endif

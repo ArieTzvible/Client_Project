@@ -3,7 +3,7 @@
 #ifndef HeaderCreatingAClient
 #define HeaderCreatingAClient
 
-#include "Header.h"
+#include "HeaderTest.h"
 
 void fillingInAFirstName(PClient curr, char* string);
 void fillingInALastName(PClient curr, char* string);

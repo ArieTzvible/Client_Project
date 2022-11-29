@@ -2,7 +2,7 @@
 #ifndef HeaderUser
 #define HeaderUser
 
-#include "Header.h"
+#include "HeaderMain.h"
 
 PClient createANewCellFromTheUser(char* line);//Creating a new client from the user
 void sortingByRequest(ListManager list);//Sort by request from the user

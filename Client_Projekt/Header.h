@@ -10,13 +10,14 @@
 #include <string.h>
 #include <crtdbg.h>
 
-#define FILE_NAME "f.csv"
+#define FILE_NAME ".csv"
+#define FILE_NAME_EXTENSION ".csv"// ending
 #define ID 9//Maximum digits in ID.
 #define PHONE 10//Maximum digits in phon.
 #define DAY 31//Maximum days.
 #define MONTH 12//Maximum months.
 #define MAX_YEAR 2500//Maximum years
-#define MIN_YEAR 1000//Minimum years
+#define MIN_YEAR 1000//Minimum years ending
 
 typedef struct Date {//Date structure.
 	unsigned int day : 6;
@@ -42,16 +43,16 @@ typedef struct Client {//Client structure.
 	char* lastName;
 	char* id;
 	char* phone;
+	struct Client* next;//A place to receive the next cell
 	float debt;
 	Date date;
 	Error error;//Errors by error structure
-	struct Client* next;//A place to receive the next cell
-}Client, * PClient;
+}Client, *PClient;
 
 typedef struct List {//List manager structure
 	PClient head;//The head list 
 	PClient headError;//The head errors list
-}List, * ListManager;
+}List, *ListManager;
 
 void addToHeadTheList(PClient* head, PClient newCell);//add to the top of the list
 void addingASortedCustomerToTheList(PClient* head, PClient newCell);//Sorting and adding to the list
@@ -59,7 +60,4 @@ void addingASortedCustomerToTheList(PClient* head, PClient newCell);//Sorting an
 ListManager createANewListManager();//Creating a new manager structure
 PClient initializeErrorsinAnewCell();//Creating a structure of a new client
 
-char* creatingADynamicCharWithContent(char* string);//Creating a dynamic variable with content
-
-char* getNewFileName();//Requesting another file name
 #endif
