@@ -33,7 +33,7 @@
     <ClInclude Include="HeaderMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderGeneral.h">
+    <ClInclude Include="HeaderUtilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderCreatingAClient.h">
@@ -59,7 +59,7 @@
     <ClCompile Include="AddAndCreat.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="General.c">
+    <ClCompile Include="Utilities.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CreatingAClient.c">

@@ -1,4 +1,4 @@
-//***********************vvvvvvvvvvvvvvvvvvvvvvvvv
+
 #include "HeaderDelet.h"
 
 void deletingACellFromTheList(PClient* currentCell) {//deleting a cell from the list

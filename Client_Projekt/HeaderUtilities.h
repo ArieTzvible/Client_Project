@@ -1,10 +1,11 @@
-//*******************vvvvvvvvvvvvvvvvvvvvvvv
-#pragma once
-#ifndef HeaderGeneral
-#define HeaderGeneral
-#include "Header.h"
 
+#pragma once
+
+#ifndef HeaderUtilities
+#define HeaderUtilities
 #define CHUNK 10
+
+#include "Header.h"
 
 int isNum(char ch);
 int isInt(char* num);//Checking the correctness of the int in the string

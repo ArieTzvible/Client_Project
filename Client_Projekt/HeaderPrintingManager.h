@@ -1,5 +1,6 @@
-//*******vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
 #pragma once
+
 #ifndef HeaderPrintingManager
 #define HeaderPrintingManager
 

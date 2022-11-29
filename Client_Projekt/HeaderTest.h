@@ -1,9 +1,10 @@
+
 #pragma once
 
 #ifndef HeaderTest
 #define HeaderTest
 
-#include "HeaderGeneral.h"
+#include "HeaderUtilities.h"
 #include "HeaderDelet.h"
 
 void testingTheNewCell(ListManager manager, PClient* newCell);// Checking whether the ID already exists

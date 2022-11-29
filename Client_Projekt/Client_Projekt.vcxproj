@@ -141,7 +141,7 @@
   <ItemGroup>
     <ClInclude Include="HeaderCreatingAClient.h" />
     <ClInclude Include="HeaderDelet.h" />
-    <ClInclude Include="HeaderGeneral.h" />
+    <ClInclude Include="HeaderUtilities.h" />
     <ClInclude Include="HeaderPrintingManager.h" />
     <ClInclude Include="HeaderMain.h" />
     <ClInclude Include="Header.h" />
@@ -156,7 +156,7 @@
     <ClCompile Include="PrintingManager.c" />
     <ClCompile Include="RequestsFromUser.c" />
     <ClCompile Include="Testing.c" />
-    <ClCompile Include="General.c" />
+    <ClCompile Include="Utilities.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

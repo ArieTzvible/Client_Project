@@ -1,4 +1,4 @@
-//********************vvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
 #include "HeaderPrintingManager.h"
 
 void printInstructions() {
@@ -74,7 +74,6 @@ void printListDebtsFromTheSmallestToTheLargest(PClient head, char* mainTitle) {/
 	printf("\t#                                                                                                #\n");
 	printf("\t##################################################################################################\n\n\n");
 }
-
 
 void printingCellsWithErrors(PClient head) {//print the cells with errors
 	if (head) {
@@ -159,4 +158,3 @@ void printASortedCell(PClient previousList, int flag) {//Getting for print the s
 		printf("\t# |--------------------------------------------------------------------------------------------| #\n");
 	}
 }
-

@@ -1,8 +1,10 @@
+
 #pragma once
+
 #ifndef HeaderMain
 #define HeaderMain
 
-#include "HeaderGeneral.h"
+#include "HeaderUtilities.h"
 #include "HeaderPrintingManager.h"
 #include "HeaderCreatingAClient.h"
 #include "HeaderTest.h"

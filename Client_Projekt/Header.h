@@ -1,3 +1,4 @@
+
 #pragma once
 
 #ifndef Header
@@ -10,7 +11,7 @@
 #include <string.h>
 #include <crtdbg.h>
 
-#define FILE_NAME ".csv"
+#define FILE_NAME "f.csv"
 #define FILE_NAME_EXTENSION ".csv"// ending
 #define ID 9//Maximum digits in ID.
 #define PHONE 10//Maximum digits in phon.

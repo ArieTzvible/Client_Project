@@ -1,5 +1,5 @@
-//*****************vvvvvvvvvvvvvvvvvvvvvvvv
-#include "HeaderGeneral.h"
+
+#include "HeaderUtilities.h"
 
 int isNum(char ch) {
 	if (ch >= '0' && ch <= '9')
