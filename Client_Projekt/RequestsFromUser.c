@@ -133,7 +133,7 @@ void sortingByRequest(ListManager list) {//Sort by request from the user
 				else
 					testFunction(list, testingPhone, value, opr);//Sending to a sorting function and printing according to the request
 			else if (!(strcmp(parameter, "debt"))) {//Checking whether the sorting request is by debt
-				if(isNegativeFloat(value))
+				if(!isNegativeFloat(value))
 					printf("\tERROR! It looks like you entered an invalid debt;\n");//print error
 				else {
 					float sumDebt = stringConversionToFloat(value);//creating a variable to receive the debt from the string
