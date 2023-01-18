@@ -1,5 +1,6 @@
 
 #include "HeaderDelet.h"
+#include "HeaderTree.h"
 
 void deletingACellFromTheList(PClient* currentCell) {//deleting a cell from the list
 	if (*currentCell) {
