@@ -84,11 +84,11 @@ int main()
 	crateArrayTreeAndArrayFuncSort();//Sending to create an array of sorting functions
 
 	char strUse[7] = { 0 };//Create a variable to receive the user's selection. 
-	int fileNameDynamic = 0;//Creating a variable to test whether the pointer to the file is dynamicõ
+	int fileNameDynamic = 0;//Creating a variable to test whether the pointer to the file is dynamic.
 	char* selection = { 0 };//Create a pointer to receive the user's selection.
 	char* fileName = { 0 };//Create a pointer to get the file name
 	char* tempFileName = FILE_NAME;//Declaration of a variable containing the file name.
-	ListManager managerClientList = initANewListManager();//Creating a new managemeø structure.
+	ListManager managerClientList = initANewListManager();//Creating a new manageme structure.
 	FILE* debtFile;//Create a pointer to the file.
 
 	fileName = tempFileName;//Getting the filename for the pointer

@@ -213,9 +213,9 @@ void sortingByRequest(ListManager list) {//Sort by request from the user
 		printf("\tThere are no debts in the current list;\n");//Print error
 
 	else {
-		printf("\t# ============================================================================================== #\n");
-		printf("\t#                                                                                                #\n");
-		printf("\t##################################################################################################\n\n\n");
+		printf("\t# =============================================================================================== #\n");
+		printf("\t#                                                                                                 #\n");
+		printf("\t###################################################################################################\n\n\n");
 	}
 	free(parameter);//Release a parameter
 	free(line);//Release a line

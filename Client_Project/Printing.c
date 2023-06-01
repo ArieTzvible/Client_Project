@@ -177,14 +177,14 @@ int printingClientsFromSortedTree(PNode root, int flag) {
 	if ((!root) || (!root->client))
 		return flag;
 
-	if (root->right)/*Sending the right pointer to print*/
-		flag += printingClientsFromSortedTree(root->right, flag);
+	if (root->left)/*Sending the right pointer to print*/
+		flag += printingClientsFromSortedTree(root->left, flag);
 
 	/*Sending the client and similar pointer to print*/
 	flag += printingSimilarCustomers(root, flag);
 
-	if (root->left)/*Sending the left pointer to print*/
-		flag += printingClientsFromSortedTree(root->left, flag);
+	if (root->right)/*Sending the left pointer to print*/
+		flag += printingClientsFromSortedTree(root->right, flag);
 
 	return flag;
 }
