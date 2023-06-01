@@ -22,9 +22,9 @@ void printInstructions() {
 }
 
 void printTableHead(char* print) {//Creating a printable table header
-	printf("\n\n\t##################################################################################################\n");
-	printf("\t#                                                                                                #\n");
-	printf("\t#    ****************************************************************************************    #\n\t#");
+	printf("\n\n\t###################################################################################################\n");
+	printf("\t#                                                                                                 #\n");
+	printf("\t#    *****************************************************************************************    #\n\t#");
 	//creating a header in the middle of the table *****
 	for (int i = 0; i < (47 - (strlen(print) / 2)); i++)
 		printf(" ");
@@ -33,17 +33,17 @@ void printTableHead(char* print) {//Creating a printable table header
 		for (int i = 0; i < (49 - (strlen(print) / 2)); i++)
 			printf(" ");
 	else
-		for (int i = 0; i < (48 - (strlen(print) / 2)); i++)
+		for (int i = 0; i < (49 - (strlen(print) / 2)); i++)
 			printf(" ");
-	printf("#\n\t#    ****************************************************************************************    #\n");
-	printf("\t# ============================================================================================== #\n");//printing subheadings
-	printf("\t# | %-16s | %-15s | %-12s | %-13s | %-10s | %-9s | #\n", " First name:", " Last name:", " ID:",
+	printf("#\n\t#    *****************************************************************************************    #\n");
+	printf("\t# =============================================================================================== #\n");//printing subheadings
+	printf("\t# | %-16s | %-15s | %-12s | %-13s | %-10s | %-10s | #\n", " First name:", " Last name:", " ID:",
 		" Phon:", " Date:", " Debt:");
-	printf("\t# |============================================================================================| #\n");
+	printf("\t# |=============================================================================================| #\n");
 }
 
 void printCell(PClient cell) {//printing a single cell
-	printf("\t# | %-16s | %-15s | %-12s | %-13s | %02d/%02d/%04d | %-9.2f | #\n",
+	printf("\t# | %-16s | %-15s | %-12s | %-13s | %02d/%02d/%04d | %-10.2f | #\n",
 		cell->firstName, cell->lastName, cell->id, cell->phone, cell->date.day,
 		cell->date.month, cell->date.year, cell->debt);
 }
@@ -66,29 +66,29 @@ void printListDebtsFromTheSmallestToTheLargest(PClient head, char* mainTitle) {/
 				flag = 1;
 			}
 			printCell(temp);//Send to cell print function
-			printf("\t# |--------------------------------------------------------------------------------------------| #\n");
+			printf("\t# |---------------------------------------------------------------------------------------------| #\n");
 		}
 		temp = temp->next;//Move the pointer to the next cell
 	}
-	printf("\t# ============================================================================================== #\n");
-	printf("\t#                                                                                                #\n");
-	printf("\t##################################################################################################\n\n\n");
+	printf("\t# =============================================================================================== #\n");
+	printf("\t#                                                                                                 #\n");
+	printf("\t###################################################################################################\n\n\n");
 }
 
 void printingCellsWithErrors(PClient head) {//print the cells with errors
 	if (head) {
-		printTableHead("ERRORS!!  ");//Send to create a table with a header
+		printTableHead("ERRORS!!   ");//Send to create a table with a header
 		PClient temp = head;//creating a pointer to the top of the list
 		while (temp) {
 			int printsThatWere = 0;//Creating a variable to maintain the integrity of the table
 			printCell(temp);//Cell printing
 			if (temp->error.comparisonFirstName || temp->error.comparisonLastName) {
 				if (temp->error.comparisonFirstName)
-					printf("\t# |  The first name does not match the ID number -> %s != %-16s              | #", temp->id, temp->firstName);// print error
+					printf("\t# |  The first name does not match the ID number -> %s != %-16s               | #", temp->id, temp->firstName);// print error
 				if (temp->error.comparisonFirstName && temp->error.comparisonLastName)
 					printf("\n");
 				if (temp->error.comparisonLastName)
-					printf("\t# |  The last name does not match the ID number -> %s != %-15s                | #", temp->id, temp->lastName);// print error
+					printf("\t# |  The last name does not match the ID number -> %s != %-15s                 | #", temp->id, temp->lastName);// print error
 			}
 			else {
 				if (temp->error.lacksValues)
@@ -106,29 +106,29 @@ void printingCellsWithErrors(PClient head) {//print the cells with errors
 				if (temp->error.debt)
 					printErrors("debt", &printsThatWere);//Send to error print function			
 				if (printsThatWere > 0) {
-					for (int i = printsThatWere; i < 91; i++)
+					for (int i = printsThatWere; i < 92; i++)
 						printf(" ");//print spaces until the end of the row in the table
 					printf("| #");//closing the row in the table
 				}
 			}
-			printf("\n\t# |--------------------------------------------------------------------------------------------| #\n");
+			printf("\n\t# |---------------------------------------------------------------------------------------------| #\n");
 
 			temp = temp->next;//Move the pointer to the next cell
 		}
-		printf("\t# ============================================================================================== #\n");
+		printf("\t# =============================================================================================== #\n");
 	}
 
 	else if (!head) {//Print when there are no errors
-		printf("\n\t##################################################################################################\n");
-		printf("\t#                                                                                                #\n");
-		printf("\t#    ****************************************************************************************    #\n");
-		printf("\t#                                                                                                #\n");
-		printf("\t#     $$$$$$$$$$$$$$$$$$$$$$  There are no errors in the client list  $$$$$$$$$$$$$$$$$$$$$$     #\n");
-		printf("\t#                                                                                                #\n");
-		printf("\t#    ****************************************************************************************    #\n");
+		printf("\n\t###################################################################################################\n");
+		printf("\t#                                                                                                 #\n");
+		printf("\t#    *****************************************************************************************    #\n");
+		printf("\t#                                                                                                 #\n");
+		printf("\t#     $$$$$$$$$$$$$$$$$$$$$$$  There are no errors in the client list  $$$$$$$$$$$$$$$$$$$$$$     #\n");
+		printf("\t#                                                                                                 #\n");
+		printf("\t#    *****************************************************************************************    #\n");
 	}
-	printf("\t#                                                                                                #\n");
-	printf("\t##################################################################################################\n\n\n");
+	printf("\t#                                                                                                 #\n");
+	printf("\t###################################################################################################\n\n\n");
 }
 
 void printErrors(char* error, int* printsThatWere) {//print the error
@@ -136,10 +136,10 @@ void printErrors(char* error, int* printsThatWere) {//print the error
 		printf("\t# | ERROR! ");
 		*printsThatWere += 7;//added to the number of characters printed
 	}
-	if (*printsThatWere + (strlen(error) + 16) >= 85) {// check that it will not exceed the size of the row in the table
-		for (int i = *printsThatWere; i < 85; i++)
+	if (*printsThatWere + (strlen(error) + 16) >= 86) {// check that it will not exceed the size of the row in the table
+		for (int i = *printsThatWere; i < 86; i++)
 			printf(" ");// print spaces until the end of the row in the table
-		printf("      | #\n\t# | ");//creating a new row in the table
+		printf("       | #\n\t# | ");//creating a new row in the table
 		*printsThatWere = 0;// Setting the number of printed characters to 0
 	}
 	if (*printsThatWere != 7) {// checking that it is not a first print
@@ -155,7 +155,7 @@ void printASortedCell(PClient previousList, int flag) {//Getting for print the s
 		printTableHead("Sorted List As Per Your Request");//Sending for printing the table header
 	if (previousList->debt < 0) {//	Checking if there is a debt
 		printCell(previousList);//Send to cell print function
-		printf("\t# |--------------------------------------------------------------------------------------------| #\n");
+		printf("\t# |---------------------------------------------------------------------------------------------| #\n");
 	}
 }
 
