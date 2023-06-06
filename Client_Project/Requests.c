@@ -101,7 +101,18 @@ int testFunction(PNode root, void* value, char opr, int (*testing)(void*, PClien
 	int flag = 0;//Declaration of a variable that checks whether the table header has been printed
 	test = testing(value, temp->client);//getting the test value
 
-	if (test < 0 || opr == '!') {
+
+	if (opr == '!') {
+		flag += testFunction(temp->left, value, opr, testing);
+
+		/*Sending the client and similar pointer to print*/
+		flag += printingSimilarCustomers(temp, flag);
+
+		/*Sending the left tree to print*/
+		flag += printingClientsInDescendingOrder(temp->right, flag);
+	}	
+
+	else if (test < 0) {
 		if (temp->left) {
 			flag += testFunction(temp->left, value, opr, testing);
 		}
@@ -111,33 +122,28 @@ int testFunction(PNode root, void* value, char opr, int (*testing)(void*, PClien
 			/*Sending the client and similar pointer to print*/
 			flag += printingSimilarCustomers(temp, flag);
 
-			/*Sending the left tree to print*/
-			flag += printingClientsFromSortedTree(temp->right, flag);
+			/*Sending the right tree to print*/
+			flag += printingClientsInDescendingOrder(temp->right, flag);
 		}
 	}
-	if (test > 0 || opr == '!') {
+	else if (test > 0) {
 		flag += testFunction(temp->right, value, opr, testing);
 		if (opr == '=')
 			return flag;
 		if (opr == '<') {
 			/*Sending the client and similar pointer to print*/
 			flag += printingSimilarCustomers(temp, flag);
-
-			/*Sending the right tree to print*/
-			flag += printingClientsFromSortedTree(temp->left, flag);
-		}
+			/*Sending the left tree to print*/
+			flag += printingClientsInAscendingOrder(temp->left, flag);
+		}	  		
 	}
+
 	else if (test == 0) {
 		if (opr == '=') {
 			/*Sending the client and similar pointer to print*/
 			flag += printingSimilarCustomers(temp, flag);
 			return flag;
 		}
-	}
-
-	if (opr == '!' && (test != 0)) {
-		/*Sending the client and similar pointer to print*/
-		flag += printingSimilarCustomers(temp, flag);
 	}
 
 	return flag;
@@ -237,7 +243,7 @@ void addingClientFromUser(ListManager* list, FILE* out) {//printing a new line f
 					break;
 				prev = temp;
 				temp = temp->next;//Move the pointer to the next cell
-			
+
 			} while (temp && cellNew && !cellNew->error.ERROR);
 			// checking that the list is not at the end or that the cell is empty or that there is an error in the cell
 		}

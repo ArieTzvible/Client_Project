@@ -7,7 +7,8 @@
 #include "Header.h"
 
 int printingSimilarCustomers(PNode node, int flag);
-int printingClientsFromSortedTree(PNode root, int flag);
+int printingClientsInDescendingOrder(PNode root, int flag);//Printing clients from sorted tree froms small to large
+int printingClientsInAscendingOrder(PNode root, int flag);//Printing clients from sorted tree from big to small 
 void printInstructions();//Printing instructions for the program.
 void printTableHead(char* print);//Creating a printable table header
 void printCell(PClient cell);//Single client printing

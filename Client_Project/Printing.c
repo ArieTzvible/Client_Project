@@ -172,19 +172,36 @@ int printingSimilarCustomers(PNode node, int flag) {
 	return 1;
 }
 
-int printingClientsFromSortedTree(PNode root, int flag) {
+int printingClientsInDescendingOrder(PNode root, int flag) {
 	/*Check if the node is empty*/
 	if ((!root) || (!root->client))
 		return flag;
 
 	if (root->left)/*Sending the right pointer to print*/
-		flag += printingClientsFromSortedTree(root->left, flag);
+		flag += printingClientsInDescendingOrder(root->left, flag);
 
 	/*Sending the client and similar pointer to print*/
 	flag += printingSimilarCustomers(root, flag);
 
 	if (root->right)/*Sending the left pointer to print*/
-		flag += printingClientsFromSortedTree(root->right, flag);
+		flag += printingClientsInDescendingOrder(root->right, flag);
+
+	return flag;
+}
+
+int printingClientsInAscendingOrder(PNode root, int flag) {
+	/*check if the node is empty*/
+	if ((!root) || (!root->client))
+		return flag;
+
+	if (root->right)/*sending the left pointer to print*/
+		flag += printingClientsInAscendingOrder(root->right, flag);
+
+	/*sending the client and similar pointer to print*/
+	flag += printingSimilarCustomers(root, flag);
+
+	if (root->left)/*sending the right pointer to print*/
+		flag += printingClientsInAscendingOrder(root->left, flag);
 
 	return flag;
 }
